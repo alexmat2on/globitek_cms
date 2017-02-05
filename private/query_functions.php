@@ -1,5 +1,19 @@
 <?php
 
+  // Find all usernames in the users table
+  function get_usernames() {
+	  global $db;
+	  $usernames = [];
+	  $sql = "SELECT username FROM users";
+	  $query = db_query($db, $sql);
+	  
+	  while($result = $query->fetch_assoc()){
+		      $usernames[] = $result['username'];
+	  }
+
+	  return $usernames;
+  }
+
   // Find all countries, ordered by name
   function find_all_countries() {
     global $db;

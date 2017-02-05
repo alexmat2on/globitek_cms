@@ -47,12 +47,21 @@
 
 
     // Validate Username
+    $usernames_array = get_usernames(); // My own function in private/query_functions.php
+    $is_unique = true;
+
+    foreach($usernames_array as $u) {
+	    if($u == $username) $is_unique = false;
+    }
+
     if (is_blank($username)) {
         $errors[] = "Username cannot be blank.";
     } elseif (!has_length($username, ['min' => 8, 'max' => 255])) {
         $errors[] = "Username must be between 8 and 255 characters.";
     } elseif (!preg_match('/\A[A-Za-z0-9\s_\']+\Z/', $username)) {
 	    $errors[] = "Username can only contain upper and lower case letters, numbers and underscores";
+    } elseif (!$is_unique) {
+	    $errors[] = "Username is already taken.";
     } 
 
     // if there were no errors, submit data to database
@@ -91,7 +100,7 @@
   <?php
     // TODO: display any form errors here
     // Hint: private/functions.php can help
-    echo display_errors($errors);
+  	echo display_errors($errors);
   ?>
 
   <!-- TODO: HTML form goes here -->
