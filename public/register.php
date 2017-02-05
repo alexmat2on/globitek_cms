@@ -46,25 +46,28 @@
     }
 
     // if there were no errors, submit data to database
-
+    if (count($errors) == 0) {
+	    
       // Write SQL INSERT statement
-      // $sql = "";
+      $date = date('Y-m-d H:i:s');
+      $sql = "INSERT INTO users (first_name, last_name, email, username, created_at)
+	      VALUES('{$firstname}','{$lastname}','{$email}','{$username}','{$date}')";
 
       // For INSERT statments, $result is just true/false
-      // $result = db_query($db, $sql);
-      // if($result) {
-      //   db_close($db);
+      $result = db_query($db, $sql);
+      if($result) {
+         db_close($db);
 
       //   TODO redirect user to success page
-
-      // } else {
-      //   // The SQL INSERT statement failed.
+	redirect_to("registration_success.php");
+      } else {
+     //   // The SQL INSERT statement failed.
       //   // Just show the error, not the form
-      //   echo db_error($db);
-      //   db_close($db);
-      //   exit;
-      // }
-      // 
+         echo db_error($db);
+         db_close($db);
+         exit;
+      }
+    }
   }
 ?>
 
@@ -84,13 +87,13 @@
   <!-- TODO: HTML form goes here -->
   <form action="register.php" method="post">
 	First Name:<br>
-	<input type="text" name="firstname" value=<?php echo $firstname ?>><br><br>
+	<input type="text" name="firstname" value=<?php echo h($firstname); ?>><br><br>
 	Last name:<br>
-	<input type="text" name="lastname" value=<?php echo $lastname ?>><br><br>
+	<input type="text" name="lastname" value=<?php echo h($lastname); ?>><br><br>
 	Email:<br>
-	<input type="text" name="email" value=<?php echo $email ?>><br><br>
+	<input type="text" name="email" value=<?php echo h($email); ?>><br><br>
 	Username:<br>
-	<input type="text" name="username" value=<?php echo $username ?>><br><br>
+	<input type="text" name="username" value=<?php echo h($username); ?>><br><br>
 	<input type="submit" value="Submit"><br>
    </form>
   

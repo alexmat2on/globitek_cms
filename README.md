@@ -1,6 +1,6 @@
 # Project 1 - Globitek CMS
 
-Time spent: **1.5** hours spent in total
+Time spent: **2** hours spent in total
 
 ## User Stories
 
@@ -33,17 +33,17 @@ The following **required** functionality is completed:
   * [x]  Required: Report all errors as a list above the form.
   * [x]  Required: Test each field to ensure you get the expected errors.
 
-6. [ ]  Required: Submit successfully-validated form values to the database.
-  * [ ]  Required: Write an SQL insert statement.
-  * [ ]  Required: Add current date and time to "created\_at".
-  * [ ]  Required: Follow best practices regarding the query result and database connection.
-  * [ ]  Required: Use the command line to check the records.
+6. [x]  Required: Submit successfully-validated form values to the database.
+  * [x]  Required: Write an SQL insert statement.
+  * [x]  Required: Add current date and time to "created\_at".
+  * [x]  Required: Follow best practices regarding the query result and database connection.
+  * [x]  Required: Use the command line to check the records.
 
-7. [ ]  Required: Redirect the user to a confirmation page.
-    * [ ]  Required: Locate the page "public/registration\_success.php".
-    * [ ]  Required: Redirect the user to the new page. ([Tips](#!hints))
+7. [x]  Required: Redirect the user to a confirmation page.
+    * [x]  Required: Locate the page "public/registration\_success.php".
+    * [x]  Required: Redirect the user to the new page. ([Tips](#!hints))
 
-8. [ ]  Required: Sanitize all dynamic output for HTML. ([Tips](#!hints))
+8. [x]  Required: Sanitize all dynamic output for HTML. ([Tips](#!hints))
 
 
 The following advanced user stories are optional:
