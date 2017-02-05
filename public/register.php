@@ -32,7 +32,7 @@
     } elseif (!preg_match('/\A[A-Za-z\s\-,\.\']+\Z/', $lastname)) {
 	    $errors[] = "First name can only contain upper and lower case letters, spaces, and the symbols:  - , . '";
     }
- 
+
 
     // Validate Email Address
     if (is_blank($email)) {

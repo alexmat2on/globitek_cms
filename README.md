@@ -1,6 +1,6 @@
 # Project 1 - Globitek CMS
 
-Time spent: **2** hours spent in total
+Time spent: **3** hours spent in total
 
 ## User Stories
 
@@ -48,22 +48,22 @@ The following **required** functionality is completed:
 
 The following advanced user stories are optional:
 
-* [ ]  Bonus 1: Validate that form values contain only whitelisted characters.
+* [x]  Bonus 1: Validate that form values contain only whitelisted characters.
 
-* [ ]  Bonus 2: Validate the uniqueness of the username.
+* [x]  Bonus 2: Validate the uniqueness of the username.
 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://media.giphy.com/media/l0Ex93CuQQ8ZhGDhC/source.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+GIF created with [Gifine](https://github.com/leafo/gifine).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The biggest challenge I faced was with integrating MySQL with PHP, especially for retrieving an array of all previous usernames to check for new username uniqueness (in Bonus 2). 
 
 ## License
 
