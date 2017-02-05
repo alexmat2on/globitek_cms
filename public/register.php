@@ -20,6 +20,8 @@
 	    $errors[] = "First name cannot be blank.";
     } elseif (!has_length($firstname, ['min' => 2, 'max' => 255])) {
             $errors[] = "First name must be between 2 and 255 characters.";
+    } elseif (!preg_match('/\A[A-Za-z\s\-,\.\']+\Z/', $firstname)) {
+	    $errors[] = "First name can only contain upper and lower case letters, spaces, and the symbols:  - , . '";
     }
 
     // Validate Last Name
@@ -27,7 +29,10 @@
             $errors[] = "Last name cannot be blank.";
     } elseif (!has_length($lastname, ['min' => 2, 'max' => 255])) {
             $errors[] = "Last name must be between 2 and 255 characters.";
+    } elseif (!preg_match('/\A[A-Za-z\s\-,\.\']+\Z/', $lastname)) {
+	    $errors[] = "First name can only contain upper and lower case letters, spaces, and the symbols:  - , . '";
     }
+ 
 
     // Validate Email Address
     if (is_blank($email)) {
@@ -36,14 +41,19 @@
         $errors[] = "Email must be between 2 and 255 characters.";
     } elseif (!has_valid_email_format($email)) {
 	$errors[] = "Email is not a valid email format.";
+    } elseif (!preg_match('/\A[A-Za-z0-9\@\.]+\Z/', $email)) {
+	    $errors[] = "Email can only contain upper and lower case letters, numbers and the symbols: @";
     }
+
 
     // Validate Username
     if (is_blank($username)) {
         $errors[] = "Username cannot be blank.";
     } elseif (!has_length($username, ['min' => 8, 'max' => 255])) {
         $errors[] = "Username must be between 8 and 255 characters.";
-    }
+    } elseif (!preg_match('/\A[A-Za-z0-9\s_\']+\Z/', $username)) {
+	    $errors[] = "Username can only contain upper and lower case letters, numbers and underscores";
+    } 
 
     // if there were no errors, submit data to database
     if (count($errors) == 0) {
